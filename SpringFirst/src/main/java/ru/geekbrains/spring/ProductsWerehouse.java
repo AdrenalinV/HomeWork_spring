@@ -27,8 +27,11 @@ public class ProductsWerehouse implements  CRUD{
     }
 
     @Override
-    public Product getID(int id) {
-        return this.werehouse.get(id);
+    public Product getInd(int ind) throws IndexOutOfBoundsException {
+        if (ind<0 || ind>=this.werehouse.size()){
+            throw new IndexOutOfBoundsException();
+        }
+        return this.werehouse.get(ind);
     }
 
     @Override
@@ -42,9 +45,12 @@ public class ProductsWerehouse implements  CRUD{
     }
 
     @Override
-    public void setID(int id, Product prod) {
+    public void setInd(int ind, Product prod) throws IndexOutOfBoundsException{
+        if (ind<0 || ind>=this.werehouse.size()){
+            throw new IndexOutOfBoundsException();
+        }
         Product tmp;
-        tmp=this.werehouse.get(id);
+        tmp=this.werehouse.get(ind);
         tmp.setCost(prod.getCost());
         tmp.setTitle(prod.getTitle());
     }

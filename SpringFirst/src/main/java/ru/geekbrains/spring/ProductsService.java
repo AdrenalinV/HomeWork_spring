@@ -3,7 +3,6 @@ package ru.geekbrains.spring;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.Iterator;
 import java.util.List;
 
 @Service
@@ -38,11 +37,11 @@ public class ProductsService {
     public boolean deleteProduct(Product prod){
         return this.productsWerehouse.del(prod);
     }
-    public void updateProductById(int id,Product prod){
-        this.productsWerehouse.setID(id,prod);
+    public void updateProductByInd(int ind,Product prod){
+        this.productsWerehouse.setInd(ind,prod);
     }
-    public Product getProductById(int id){
-        return this.productsWerehouse.getID(id);
+    public Product getProductByInd(int ind){
+        return this.productsWerehouse.getInd(ind);
     }
     public List<Product> allProducts(){
         return this.productsWerehouse.get();
