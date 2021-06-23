@@ -3,9 +3,7 @@ package ru.geekbrains.spring;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 
 @Component("werehouse")
 public class ProductsWerehouse implements  CRUD{
@@ -23,7 +21,7 @@ public class ProductsWerehouse implements  CRUD{
 
     @Override
     public List<Product> get() {
-        return werehouse;
+        return Collections.unmodifiableList(werehouse);
     }
 
     @Override
